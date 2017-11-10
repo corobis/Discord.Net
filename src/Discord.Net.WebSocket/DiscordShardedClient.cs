@@ -22,7 +22,7 @@ namespace Discord.WebSocket
         /// <summary> Gets the estimated round-trip latency, in milliseconds, to the gateway server. </summary>
         public int Latency => GetLatency();
         public UserStatus Status => _shards[0].Status;
-        public Game? Game => _shards[0].Game;
+        public IActivity Activity => _shards[0].Activity;
 
         internal new DiscordSocketApiClient ApiClient => base.ApiClient as DiscordSocketApiClient;
         public new SocketSelfUser CurrentUser { get { return base.CurrentUser as SocketSelfUser; } private set { base.CurrentUser = value; } }
